@@ -4,6 +4,7 @@ import "./Portfolio.css";
 function Portfolio() {
   const [filter, setFilter] = useState("all");
   const [selectedImage, setSelectedImage] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const projects = [
     {
@@ -69,6 +70,19 @@ function Portfolio() {
       category: "commercial",
       image: "/images/R5_KOLKATA MEPL_SECOND FLOOR_11072022.pdf",
       description: "Multi-floor commercial design",
+    },
+    {
+      id: 11,
+      title: "Modern Residential Design",
+      category: "residential",
+      images: [
+        "images1/WhatsApp Image 2026-01-14 at 8.25.18 PM.jpeg",
+        "images1/WhatsApp Image 2026-01-14 at 8.25.19 PM.jpeg",
+        "images1/WhatsApp Image 2026-01-18 at 1.06.02 AM.jpeg",
+      ],
+      image: "images1/WhatsApp Image 2026-01-14 at 8.25.18 PM.jpeg",
+      description:
+        "Contemporary residential architecture with modern aesthetics",
     },
   ];
 
@@ -165,7 +179,41 @@ function Portfolio() {
             >
               ×
             </button>
-            <img src={selectedImage.image} alt={selectedImage.title} />
+            <img
+              src={
+                selectedImage.images
+                  ? selectedImage.images[currentImageIndex]
+                  : selectedImage.image
+              }
+              alt={selectedImage.title}
+            />
+            {selectedImage.images && selectedImage.images.length > 1 && (
+              <div className="lightbox-navigation">
+                <button
+                  onClick={() =>
+                    setCurrentImageIndex(
+                      (prev) =>
+                        (prev - 1 + selectedImage.images.length) %
+                        selectedImage.images.length
+                    )
+                  }
+                >
+                  ← Prev
+                </button>
+                <span>
+                  {currentImageIndex + 1} / {selectedImage.images.length}
+                </span>
+                <button
+                  onClick={() =>
+                    setCurrentImageIndex(
+                      (prev) => (prev + 1) % selectedImage.images.length
+                    )
+                  }
+                >
+                  Next →
+                </button>
+              </div>
+            )}
             <div className="lightbox-info">
               <h3>{selectedImage.title}</h3>
               <p>{selectedImage.description}</p>
