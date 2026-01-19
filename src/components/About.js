@@ -16,7 +16,7 @@ function About() {
           <div className="about-text">
             <p className="about-intro">
               Hello! I'm <strong>Rani Yadav</strong>, a passionate interior
-              designer with over 5 years of experience transforming ordinary
+              designer with over 3 years of experience transforming ordinary
               spaces into extraordinary environments.
             </p>
 
@@ -48,7 +48,7 @@ function About() {
                 <div className="highlight-icon">💼</div>
                 <div className="highlight-content">
                   <h4>Experience</h4>
-                  <p>5+ Years in Residential & Commercial Design</p>
+                  <p>3+ Years in Residential & Commercial Design</p>
                 </div>
               </div>
 
