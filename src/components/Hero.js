@@ -24,7 +24,7 @@ function Hero() {
             <span className="subtitle">Interior Design Studio</span>
           </h1>
           <p className="hero-description">
-            Transforming spaces into timeless masterpieces. With over 5 years of
+            Transforming spaces into timeless masterpieces. With over 3 years of
             experience in residential and commercial interior design, I create
             environments that blend functionality with aesthetic excellence.
           </p>
@@ -45,11 +45,11 @@ function Hero() {
           </div>
           <div className="hero-stats">
             <div className="stat">
-              <span className="stat-number">50+</span>
+              <span className="stat-number">20+</span>
               <span className="stat-label">Projects Completed</span>
             </div>
             <div className="stat">
-              <span className="stat-number">5+</span>
+              <span className="stat-number">3+</span>
               <span className="stat-label">Years Experience</span>
             </div>
             <div className="stat">
